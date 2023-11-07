@@ -26,24 +26,30 @@
 
     <!-- login form -->
 
+    <h1>Get Started!</h1>
+
     <div class="container" id = "login-form">
-    
-    <form>
-        <div class="form-group">
-            <label for="inputEmail">Email address</label>
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        <div class="well">
+            <form>
+                <div class="form-group">
+                    <label for="inputFullName">Full Name</label>
+                    <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">
+                        By creating an account, I agree to this website's <a href="link_zur_privacy_policy">privacy policy</a> and <a href="link_zu_terms_of_service">terms of service</a>
+                    </label>
+                </div>
+                <button onclick= "redirect()" id="sign-up-button" type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="link_zum_login">Log In</a></p> 
         </div>
-        <div class="form-group">
-            <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Check me out
-            </label>
-        </div>
-        <button id= "sign-in-button" type="submit" class="btn btn-default">Sign in</button>
-    </form>
     </div>
+    <script src="script.js"></script>
 </body>    
 </html>  
