@@ -1,67 +1,54 @@
 <!DOCTYPE html>   
-<html>   
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
-<style>   
-Body {  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
-}  
-button {   
-       background-color: #4CAF50;   
-       width: 100%;  
-        color: orange;   
-        padding: 15px;   
-        margin: 10px 0px;   
-        border: none;   
-        cursor: pointer;   
-         }   
- form {   
-        border: 3px solid #f1f1f1;   
-    }   
- input[type=text], input[type=password] {   
-        width: 100%;   
-        margin: 8px 0;  
-        padding: 12px 20px;   
-        display: inline-block;   
-        border: 2px solid green;   
-        box-sizing: border-box;   
-    }  
- button:hover {   
-        opacity: 0.7;   
-    }   
-  .cancelbtn {   
-        width: auto;   
-        padding: 10px 18px;  
-        margin: 10px 5px;  
-    }   
-        
-     
- .container {   
-        padding: 25px;   
-        background-color: lightblue;  
-    }   
-</style>   
-</head>    
-<body>    
-    <center> <h1> Student Login Form </h1> </center>   
-    <form>  
-        <div class="container">   
-            <label>Username : </label>   
-            <input type="text" placeholder="Enter Username" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
-            <button onclick= "redirect()">Zur Webflow-App</button>  
-            <input type="checkbox" checked="checked"> Remember me   
-            <button type="button" class="cancelbtn"> Cancel</button>   
-            Forgot <a href="#"> password? </a>   
-        </div>   
-    </form>     
-</body>     
-</html> 
-<script>
-  function redirect() {
-    window.location.href = "https://thinkwisenotes.webflow.io/app";
-  }
-</script>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- load jquery, bootstrap, firebase -->
+    
+    <!-- jquery -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="signUp.css" />
+</head>  
+<body>
+    <!-- html forms -->
+
+
+
+    <!-- signUp form -->
+
+    <div class="container" id="signup-form">
+      <div class="card">
+          <h2 class="card-header text-center font-weight-bold">Get Started!</h2>
+          <div class="card-body">
+              <form>
+                  <div class="form-group">
+                      <label for="inputName" class="font-weight-bold">Name</label>
+                      <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+                  </div>
+                  <div class="form-group">
+                      <label for="inputEmail" class="font-weight-bold">Email address</label>
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+                  </div>
+                  <div class="form-group">
+                      <label for="inputPassword" class="font-weight-bold">Password</label>
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Enter your password">
+                  </div>
+                  <button id="sign-up-button" type="button" class="btn btn-primary btn-block my-3">Sign Up</button>
+                  <button onclick="redirectLogin()" type="button" class="btn btn-secondary btn-block my-3">Log In with existing account</button>
+                  <button id="sign-up-google-button" type="button" class="btn btn-danger btn-block my-3">Sign Up with Google</button>
+              </form>
+          </div>
+      </div>
+  </div>  
+
+    <script src="signUp.js"></script>
+</body>    
+</html>  
