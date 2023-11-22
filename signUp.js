@@ -1,6 +1,7 @@
 function redirectLogin() {
     window.location.href = "https://benjiwurfl.github.io/Login/";
 }
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
@@ -32,7 +33,7 @@ const auth = getAuth(app);
 
 const db = getFirestore(app);
 
-signupbutton.addEventListener('click', (e) => {
+document.getElementById('signupbutton').addEventListener('click', (e) => {
 
     var email = document.getElementById('inputEmail').value;
     var password = document.getElementById('inputPassword').value;
