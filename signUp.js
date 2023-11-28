@@ -29,17 +29,20 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebas
             evt.preventDefault();
 
             createUserWithEmailAndPassword(auth, EmailInput.value, PasswordInput.value)
-            .then((credentials)=>{
-                set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
+            .then((userCredential)=>{
+                const user = userCredential.user;
+                set(ref(db, 'users/' + user.uid),{
                     firstname: FirstNameInput.value,
-                    lastname: LastNameInput.value
-                })
+                    lastname: LastNameInput.value,
+                    email: EmailInput.value,
+                });
+                alert('user created!');
 
             })
             .catch((error) =>{
-                alert(error.message)
-                console.log(error.code);
-                console.log(error.message);
+                const errorMessage = error.message;
+
+                alert(errorMessage);
             })
         }
 
