@@ -12,7 +12,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100%;
+	height: 100vh;
 	margin: -20px 0 50px;
     overflow: hidden;
 }
@@ -99,7 +99,7 @@ input {
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
-	min-height: 560px;
+	min-height: 480px;
 }
 
 .form-container {
@@ -109,28 +109,14 @@ input {
 	transition: all 0.6s ease-in-out;
 }
 
-.sign-in-container {
+.sign-up-container {
 	left: 0;
 	width: 50%;
 	z-index: 2;
 }
 
-.container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
-}
-
-.sign-up-container {
-	left: 0;
-	width: 50%;
-	opacity: 0;
-	z-index: 1;
-}
-
 .container.right-panel-active .sign-up-container {
 	transform: translateX(100%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
 }
 
 @keyframes show {
