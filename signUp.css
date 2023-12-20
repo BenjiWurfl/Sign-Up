@@ -12,8 +12,8 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+	height: 100%;
+	margin: 0 0 50px;
     overflow: hidden;
 }
 
@@ -112,7 +112,7 @@ input {
 .sign-in-container {
 	left: 0;
 	width: 50%;
-	z-index: 2;
+	z-index: 1;
 }
 
 .container.right-panel-active .sign-in-container {
