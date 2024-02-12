@@ -76,7 +76,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 0 20px;
 	height: 100%;
 	text-align: center;
 }
@@ -99,6 +99,12 @@ input {
 	max-width: 100%;
 	min-height: 480px;
     margin: auto; 
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Beispiel: Container wird auf kleinen Bildschirmen 90% der Breite */
+    }
 }
 
 .form-container {
