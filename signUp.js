@@ -19,11 +19,12 @@ const analytics = getAnalytics(app);
 const db = getDatabase();
 const auth = getAuth(app);
 
-let EmailInput = document.getElementById('emailInput');
-let PasswordInput = document.getElementById('passwordInput');
-let FirstNameInput = document.getElementById('firstNameInput');
-let LastNameInput = document.getElementById('lastNameInput');
-let SignUpForm = document.getElementById('SignUpForm');
+let SignUpForm = document.getElementsByClassName('SignUpForm')[0];
+
+let EmailInput = SignUpForm.querySelector('#emailInput');
+let PasswordInput = SignUpForm.querySelector('#passwordInput');
+let FirstNameInput = SignUpForm.querySelector('#firstNameInput');
+let LastNameInput = SignUpForm.querySelector('#lastNameInput');
 
 let RegisterUser = evt => {
     evt.preventDefault();
