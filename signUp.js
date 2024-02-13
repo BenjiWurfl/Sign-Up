@@ -39,6 +39,7 @@ let RegisterUser = evt => {
         });
         alert('user created!');
 
+        window.location.href = "https://thinkwisenotes.webflow.io/app";
     })
     .catch((error) =>{
         const errorMessage = error.message;
