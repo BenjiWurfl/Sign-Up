@@ -29,7 +29,7 @@ let LastNameInput = SignUpForm.querySelector('#lastNameInput');
 let RegisterUser = evt => {
     evt.preventDefault();
 
-    createUserWithEmailAndPassword(auth, EmailInput.value, PasswordInput.value)
+    createUserWithEmailAndPassword(auth, EmailInput.value, PasswordInput.value)      // Erstellen eines Benutzers mit E-Mail und Passwort über das Firebase-Authentifizierungsmodul
     .then((userCredential)=>{
         const user = userCredential.user;
         set(ref(db, 'users/' + user.uid),{
@@ -37,7 +37,6 @@ let RegisterUser = evt => {
             lastname: LastNameInput.value,
             email: EmailInput.value,
         });
-        alert('user created!');
 
         window.location.href = "https://thinkwisenotes.webflow.io/app";
     })
