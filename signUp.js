@@ -38,7 +38,7 @@ let RegisterUser = evt => {
             email: EmailInput.value,
         });
 
-        window.location.href = "https://thinkwisenotes.webflow.io/app";
+        window.location.href = "https://benjiwurfl.github.io/Home/";
     })
     .catch((error) =>{
         const errorMessage = error.message;
