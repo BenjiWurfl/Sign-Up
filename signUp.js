@@ -19,15 +19,15 @@ const analytics = getAnalytics(app);
 const db = getDatabase();
 const auth = getAuth(app);
 
-let SignUpForm = document.getElementsByClassName('SignUpForm')[0];
+let SignUpForm = document.getElementsByClassName('SignUpForm')[0];          // Selektion des HTML-Elements mit der Klasse 'SignUpForm'
 
-let EmailInput = SignUpForm.querySelector('#emailInput');
+let EmailInput = SignUpForm.querySelector('#emailInput');                   // Selektion der Eingabefelder innerhalb des Formulars
 let PasswordInput = SignUpForm.querySelector('#passwordInput');
 let FirstNameInput = SignUpForm.querySelector('#firstNameInput');
 let LastNameInput = SignUpForm.querySelector('#lastNameInput');
 
 let RegisterUser = evt => {
-    evt.preventDefault();
+    evt.preventDefault();       // Verhindern des Standardverhaltens des Formulars
 
     createUserWithEmailAndPassword(auth, EmailInput.value, PasswordInput.value)      // Erstellen eines Benutzers mit E-Mail und Passwort über das Firebase-Authentifizierungsmodul
     .then((userCredential)=>{
@@ -40,11 +40,18 @@ let RegisterUser = evt => {
 
         window.location.href = "https://benjiwurfl.github.io/Home/";
     })
-    .catch((error) =>{
+    .catch((error) => {
+        const errorCode = error.code;
         const errorMessage = error.message;
 
-        alert(errorMessage);
-    })
+        if (errorCode === "auth/email-already-in-use") {            // Wenn der User eine Email eingibt, die bereits in Verwendung ist, kommt die entsprechende Alert 
+            alert("This email address is already registered. Please use a different one.");
+        } else if (errorCode === "auth/weak-password") {            // Wenn der User ein Passwort eingibt, welches unter 6 characters ist, kommt die entsprechende Alert
+            alert("Password should be at least 6 characters long. Please choose a stronger password.");
+        } else {
+            alert(errorMessage);
+        }
+    });
 }
 
 SignUpForm.addEventListener('submit', RegisterUser);
